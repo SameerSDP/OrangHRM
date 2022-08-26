@@ -17,4 +17,4 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-CucumberKW.runFeatureFile('Include/features/OR-17 Search Employee Information with invalid employee record.feature')
+CucumberKW.runFeatureFile('Include/features/OR-27 Delete Existing employe.feature')

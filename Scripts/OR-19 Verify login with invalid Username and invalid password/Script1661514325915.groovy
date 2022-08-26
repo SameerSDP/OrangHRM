@@ -32,3 +32,5 @@ WebUI.click(findTestObject('Page_OrangeHRM/button_Login'))
 WebUI.verifyElementPresent(findTestObject('Object Repository/Page_OrangeHRM/Invalid credentials'), GlobalVariable.setTimeout)
 
 WebUI.closeBrowser()
+
+

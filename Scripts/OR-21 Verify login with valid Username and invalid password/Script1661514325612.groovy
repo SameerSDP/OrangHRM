@@ -17,4 +17,18 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-CucumberKW.runFeatureFile('Include/features/OR-15 Search Employee Information with valid employee.feature')
+WebUI.openBrowser('')
+
+WebUI.maximizeWindow()
+
+WebUI.navigateToUrl(GlobalVariable.url)
+
+WebUI.setText(findTestObject('Page_OrangeHRM/input_Username'), GlobalVariable.valid_usernme)
+
+WebUI.setText(findTestObject('Page_OrangeHRM/input_Password'), GlobalVariable.invalid_password)
+
+WebUI.click(findTestObject('Page_OrangeHRM/button_Login'))
+
+WebUI.verifyElementPresent(findTestObject('Object Repository/Page_OrangeHRM/Invalid credentials'), GlobalVariable.setTimeout)
+
+WebUI.closeBrowser()
