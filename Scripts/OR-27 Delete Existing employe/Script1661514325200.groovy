@@ -17,4 +17,21 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-CucumberKW.runFeatureFile('Include/features/OR-27 Delete Existing employe.feature')
+WebUI.openBrowser('')
+
+WebUI.maximizeWindow()
+
+WebUI.navigateToUrl(GlobalVariable.url)
+
+WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Username'), GlobalVariable.valid_usernme)
+
+WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Password'), GlobalVariable.valid_password)
+
+WebUI.click(findTestObject('Object Repository/Page_OrangeHRM/button_Login'))
+
+WebUI.check(findTestObject('Page_OrangeHRM/Employee_Checkbox_1'))
+
+WebUI.click(findTestObject('Page_OrangeHRM/button_delete_selected'))
+
+WebUI.click(findTestObject('Page_OrangeHRM/button_Yes_delete'))
+

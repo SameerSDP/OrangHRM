@@ -34,4 +34,24 @@
       <initValue>'admin456'</initValue>
       <name>invalid_password</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'John'</initValue>
+      <name>employee_fname</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'John1'</initValue>
+      <name>employee_lname</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'john2'</initValue>
+      <name>employee_mName</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'John john2'</initValue>
+      <name>employee_fname_lname</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

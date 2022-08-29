@@ -17,4 +17,18 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-CucumberKW.runFeatureFile('Include/features/OR-22 Reset password.feature')
+WebUI.openBrowser('')
+
+WebUI.navigateToUrl(GlobalVariable.url)
+
+WebUI.click(findTestObject('Object Repository/Page_OrangeHRM/Forgot your password'))
+
+WebUI.setText(findTestObject('Page_OrangeHRM/input_Username'), GlobalVariable.valid_usernme)
+
+WebUI.click(findTestObject('Object Repository/Page_OrangeHRM/button_Reset Password'))
+
+WebUI.verifyElementPresent(findTestObject('Object Repository/Page_OrangeHRM/text_Reset Password link sent successfully'), 
+    GlobalVariable.setTimeout)
+
+WebUI.closeBrowser()
+
