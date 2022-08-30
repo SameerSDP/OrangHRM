@@ -17,4 +17,21 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-CucumberKW.runFeatureFile('Include/features/OR-31 Edit Employee Personal details.feature')
+WebUI.callTestCase(findTestCase('OR-26 Add new employee'), [:], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.click(findTestObject('Page_OrangeHRM/select_Nationality'))
+
+CustomKeywords.'keyword.dropdown.select_dropdown'(GlobalVariable.nationality)
+
+WebUI.click(findTestObject('Page_OrangeHRM/select_marital_status'))
+
+CustomKeywords.'keyword.dropdown.select_dropdown'(GlobalVariable.marital_status)
+
+WebUI.setText(findTestObject('Page_OrangeHRM/input_nick_name'), GlobalVariable.nick_name)
+
+WebUI.click(findTestObject('Page_OrangeHRM/button_Save'))
+
+WebUI.verifyElementText(findTestObject('Page_OrangeHRM/verify_dropdown_nationality'), GlobalVariable.nationality)
+
+WebUI.verifyElementText(findTestObject('Page_OrangeHRM/verify_dropdown_marital_status'), GlobalVariable.marital_status)
+

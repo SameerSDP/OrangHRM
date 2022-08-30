@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>employee_checkbox_1</name>
+   <name>select_Nationality</name>
    <tag></tag>
-   <elementGuidId>a5bcdcba-aba3-44ec-afab-ec39275e9529</elementGuidId>
+   <elementGuidId>ea64c681-62cd-4592-81e6-5e535645aa01</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>((//input[@type='checkbox'])[2]/following::span/i)[1]</value>
+         <value>(//div[@class='oxd-select-text--after']/i)[1]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

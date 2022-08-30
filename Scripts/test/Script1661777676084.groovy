@@ -29,17 +29,7 @@ WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Password'),
 
 WebUI.click(findTestObject('Object Repository/Page_OrangeHRM/button_Login'))
 
-WebUI.click(findTestObject('Object Repository/Page_OrangeHRM/button_Add'))
+WebUI.click(findTestObject('Page_OrangeHRM/select_Employee_status'))
 
-WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Employee Full Name_firstName'), GlobalVariable.employee_fname)
-
-WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Employee Full Name_middleName'), GlobalVariable.employee_lname)
-
-WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Employee Full Name_lastName'), GlobalVariable.employee_mName)
-
-WebUI.click(findTestObject('Object Repository/Page_OrangeHRM/button_Save'))
-
-WebUI.waitForElementPresent(findTestObject('Page_OrangeHRM/Employee_Name'), GlobalVariable.setTimeout)
-
-WebUI.verifyElementText(findTestObject('Page_OrangeHRM/Employee_Name'), GlobalVariable.employee_fname_lname)
+CustomKeywords.'keyword.dropdown.select_dropdown'(GlobalVariable.Employee_status)
 

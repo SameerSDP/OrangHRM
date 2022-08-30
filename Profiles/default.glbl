@@ -54,4 +54,29 @@
       <initValue>'John john2'</initValue>
       <name>employee_fname_lname</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Full-Time Permanent'</initValue>
+      <name>Employee_status</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'1001'</initValue>
+      <name>invalid_employee_id</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Indian'</initValue>
+      <name>nationality</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Single'</initValue>
+      <name>marital_status</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'johny'</initValue>
+      <name>nick_name</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

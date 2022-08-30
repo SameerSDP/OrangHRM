@@ -29,7 +29,7 @@ WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Password'),
 
 WebUI.click(findTestObject('Object Repository/Page_OrangeHRM/button_Login'))
 
-WebUI.check(findTestObject('Page_OrangeHRM/Employee_Checkbox_1'))
+WebUI.check(findTestObject('Page_OrangeHRM/employee_checkbox_1'))
 
 WebUI.click(findTestObject('Page_OrangeHRM/button_delete_selected'))
 
