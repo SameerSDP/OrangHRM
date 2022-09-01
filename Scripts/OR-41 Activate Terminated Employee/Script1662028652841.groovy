@@ -17,3 +17,29 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+WebUI.openBrowser('')
+
+CustomKeywords.'keyword.custom.login'(GlobalVariable.valid_usernme, GlobalVariable.valid_password)
+
+WebUI.click(findTestObject('Page_OrangeHRM/employee_card_1'))
+
+WebUI.click(findTestObject('Page_OrangeHRM/pim_Job'))
+
+WebUI.click(findTestObject('Page_OrangeHRM/button_terminate_employee'))
+
+CustomKeywords.'keyword.custom.setDate'('Termination Date', GlobalVariable.termination_date)
+
+CustomKeywords.'keyword.custom.dropdown'('Termination Reason', GlobalVariable.termination_reason)
+
+WebUI.waitForElementClickable(findTestObject('Page_OrangeHRM/button_save_2'), GlobalVariable.setTimeout)
+
+WebUI.click(findTestObject('Page_OrangeHRM/button_save_2'))
+
+WebUI.waitForElementNotClickable(findTestObject('Page_OrangeHRM/button_activate_employee'), GlobalVariable.setTimeout)
+
+WebUI.click(findTestObject('Page_OrangeHRM/button_activate_employee'))
+
+WebUI.waitForElementNotPresent(findTestObject('Page_OrangeHRM/text_past_employee'), GlobalVariable.setTimeout)
+
+WebUI.verifyElementNotPresent(findTestObject('Page_OrangeHRM/text_past_employee'), GlobalVariable.setTimeout)
+
