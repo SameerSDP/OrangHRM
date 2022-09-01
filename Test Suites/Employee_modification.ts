@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description></description>
-   <name>Employee_Details</name>
+   <name>Employee_modification</name>
    <tag></tag>
    <isRerun>false</isRerun>
    <mailRecipient></mailRecipient>
@@ -10,16 +10,16 @@
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <rerunImmediately>true</rerunImmediately>
-   <testSuiteGuid>d340155f-e3c5-4ae4-95e0-5bbfc6518694</testSuiteGuid>
+   <testSuiteGuid>2ac39371-ee40-4e7c-bacb-fe6012cda609</testSuiteGuid>
    <testCaseLink>
-      <guid>69a8dbe8-1617-404a-a75c-2307b50f6f12</guid>
+      <guid>53aabd7c-7161-4f08-b376-60b19f59e708</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/OR-26 Add new employee</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>6e6ed544-21c4-4d98-954a-ffc1033377f4</guid>
+      <guid>6e883bf8-091d-4198-8eec-84cdc5a5e8d1</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/OR-27 Delete Existing employe</testCaseId>

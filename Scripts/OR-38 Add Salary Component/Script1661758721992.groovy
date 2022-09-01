@@ -17,4 +17,31 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-CucumberKW.runFeatureFile('Include/features/OR-38 Add Salary Component.feature')
+WebUI.openBrowser('')
+
+CustomKeywords.'keyword.custom.login'(GlobalVariable.valid_usernme, GlobalVariable.valid_password)
+
+WebUI.click(findTestObject('Page_OrangeHRM/employee_card_1'))
+
+WebUI.waitForElementPresent(findTestObject('Page_OrangeHRM/pim_salary'), GlobalVariable.setTimeout)
+
+WebUI.click(findTestObject('Page_OrangeHRM/pim_salary'))
+
+WebUI.click(findTestObject('Page_OrangeHRM/button_add_Assigned Salary Components'))
+
+CustomKeywords.'keyword.custom.setText'('Salary Component', GlobalVariable.salary_component)
+
+CustomKeywords.'keyword.custom.dropdown'('Pay Grade', GlobalVariable.pay_grade)
+
+CustomKeywords.'keyword.custom.dropdown'('Pay Frequency', GlobalVariable.pay_freaquency)
+
+CustomKeywords.'keyword.custom.dropdown'('Currency', GlobalVariable.currency)
+
+CustomKeywords.'keyword.custom.setText'('Amount', GlobalVariable.amount)
+
+WebUI.click(findTestObject('Page_OrangeHRM/button_Save'))
+
+WebUI.verifyElementPresent(findTestObject('Page_OrangeHRM/verify_salary_component'), GlobalVariable.setTimeout)
+
+WebUI.closeBrowser()
+

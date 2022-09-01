@@ -17,4 +17,45 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-CucumberKW.runFeatureFile('Include/features/OR-35 Delete employee dependent contact details.feature')
+WebUI.openBrowser('')
+
+WebUI.maximizeWindow()
+
+WebUI.navigateToUrl(GlobalVariable.url)
+
+WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Username'), GlobalVariable.valid_usernme)
+
+WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Password'), GlobalVariable.valid_password)
+
+WebUI.click(findTestObject('Object Repository/Page_OrangeHRM/button_Login'))
+
+WebUI.click(findTestObject('Object Repository/Page_OrangeHRM/button_Add'))
+
+WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Employee Full Name_firstName'), GlobalVariable.employee_fname)
+
+WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Employee Full Name_middleName'), GlobalVariable.employee_lname)
+
+WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Employee Full Name_lastName'), GlobalVariable.employee_mName)
+
+WebUI.click(findTestObject('Object Repository/Page_OrangeHRM/button_Save'))
+
+WebUI.waitForElementPresent(findTestObject('Page_OrangeHRM/pim_dependent_details'), GlobalVariable.setTimeout)
+
+WebUI.click(findTestObject('Page_OrangeHRM/pim_dependent_details'))
+
+WebUI.click(findTestObject('Page_OrangeHRM/button_add_assigned_dependents'))
+
+CustomKeywords.'keyword.custom.setText'('Name', GlobalVariable.dependent_name)
+
+CustomKeywords.'keyword.custom.dropdown'('Relationship', 'Child')
+
+CustomKeywords.'keyword.custom.verifyTablebodyName'(GlobalVariable.dependent_name)
+
+WebUI.click(findTestObject('Page_OrangeHRM/button_Save'))
+
+WebUI.check(findTestObject('Page_OrangeHRM/checkbox_1'))
+
+WebUI.click(findTestObject('Page_OrangeHRM/button_delete_selected'))
+
+WebUI.click(findTestObject('Page_OrangeHRM/button_Yes_delete'))
+

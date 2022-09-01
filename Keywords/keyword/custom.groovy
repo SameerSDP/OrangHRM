@@ -23,6 +23,7 @@ import internal.GlobalVariable
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.By
+import org.openqa.selenium.JavascriptExecutor
 
 import com.kms.katalon.core.mobile.keyword.internal.MobileDriverFactory
 import com.kms.katalon.core.webui.driver.DriverFactory
@@ -38,7 +39,7 @@ import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.exception.WebElementNotFoundException
 
 
-class dropdown {
+class custom {
 	/**
 	 * Refresh browser
 	 */
@@ -50,6 +51,96 @@ class dropdown {
 		driver.findElement(By.xpath(xpath)).click()
 	}
 
+	//label[text()='Name']/../following-sibling::div/input
+
+	@Keyword
+	def setText(String element,String text) {
+
+		String xpath= "//label[text()='"+element+"']/../following-sibling::div/input"
+		WebDriver driver = DriverFactory.getWebDriver()
+		driver.findElement(By.xpath(xpath)).sendKeys(text)
+	}
+
+	@Keyword
+	def dropdown(String element,String option) {
+
+		String click_xpath= "//label[text()='"+element+"']/parent::div/following-sibling::div//i"
+		WebDriver driver = DriverFactory.getWebDriver()
+		driver.findElement(By.xpath(click_xpath)).click()
+
+		String xpath_option= "//*[(text() = '"+option+"')]"
+		driver.findElement(By.xpath(xpath_option)).click()
+	}
+
+	//div[@class='oxd-table-body']//div[contains(text(),'')]
+
+	@Keyword
+	def verifyTablebodyName(String actualName) {
+		String xpath = "//div[@class='oxd-table-body']//div[contains(text(),'"+actualName+"')]"
+		WebDriver driver = DriverFactory.getWebDriver()
+		try {
+			driver.findElement(By.xpath(xpath))
+
+		} catch (Exception e) {
+			e.printStackTrace()
+		}
+
+	}
+
+	//div[text()='Aaliyah ']/ancestor::div[@class='oxd-table-card']
+	@Keyword
+	def selectEmployeeName(String name) {
+
+		String xpath = "//div[text()='"+name+"']/ancestor::div[@class='oxd-table-card']"
+		WebDriver driver = DriverFactory.getWebDriver()
+		driver.findElement(By.xpath(xpath)).click()
+
+	}
+
+	//div[text()='Aaliyah ']/ancestor::div[@class='oxd-table-card']//input[@type='checkbox']
+
+	@Keyword
+	def checkEmployeeName(String name) {
+
+		String xpath = "//div[text()='"+name+"']/ancestor::div[@class='oxd-table-card']//label"
+		WebDriver driver = DriverFactory.getWebDriver()
+		driver.findElement(By.xpath(xpath)).click()
+
+	}
+
+
+
+	@Keyword
+	def login(String username, String password) {
+
+		WebDriver driver = DriverFactory.getWebDriver()
+		driver.manage().window().maximize()
+		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
+		driver.findElement(By.xpath("//input[@name='username']")).sendKeys(username)
+		driver.findElement(By.xpath("//input[@name='password']")).sendKeys(password)
+		driver.findElement(By.xpath("//button[@type='submit']")).click()
+
+
+	}
+
+	//label[text()='Joined Date']/parent::div/following-sibling::div//input
+
+	@Keyword
+	def setDate(String element, String date) {
+		String xpath= "//label[text()='"+element+"']/parent::div/following-sibling::div//input"
+		WebDriver driver = DriverFactory.getWebDriver()
+		driver.findElement(By.xpath(xpath)).sendKeys(date)
+	}
+
+	@Keyword
+	def javascriptclick() {
+		String xpath= "//button[@type='submit']"
+
+		WebDriver driver = DriverFactory.getWebDriver()
+		WebElement element = driver.findElement(By.xpath(xpath))
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", element)
+	}
 
 	@Keyword
 	def refreshBrowser() {
@@ -89,4 +180,6 @@ class dropdown {
 		List<WebElement> selectedRows = mailList.findElements(By.xpath("./" + outerTagName + "/tr"))
 		return selectedRows
 	}
+
+
 }

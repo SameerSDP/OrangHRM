@@ -21,11 +21,11 @@ WebUI.callTestCase(findTestCase('OR-26 Add new employee'), [:], FailureHandling.
 
 WebUI.click(findTestObject('Page_OrangeHRM/select_Nationality'))
 
-CustomKeywords.'keyword.dropdown.select_dropdown'(GlobalVariable.nationality)
+CustomKeywords.'keyword.custom.select_dropdown'(GlobalVariable.nationality)
 
 WebUI.click(findTestObject('Page_OrangeHRM/select_marital_status'))
 
-CustomKeywords.'keyword.dropdown.select_dropdown'(GlobalVariable.marital_status)
+CustomKeywords.'keyword.custom.select_dropdown'(GlobalVariable.marital_status)
 
 WebUI.setText(findTestObject('Page_OrangeHRM/input_nick_name'), GlobalVariable.nick_name)
 

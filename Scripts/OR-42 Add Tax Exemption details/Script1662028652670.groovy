@@ -17,15 +17,3 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.openBrowser('')
-
-CustomKeywords.'keyword.custom.login'(GlobalVariable.valid_usernme, GlobalVariable.valid_password)
-
-CustomKeywords.'keyword.custom.checkEmployeeName'(GlobalVariable.employee_fname_lname_check)
-
-WebUI.click(findTestObject('Page_OrangeHRM/button_delete_selected'))
-
-WebUI.click(findTestObject('Page_OrangeHRM/button_Yes_delete'))
-
-WebUI.verifyElementNotPresent(findTestObject('Page_OrangeHRM/verify_employee_present'), GlobalVariable.setTimeout)
-

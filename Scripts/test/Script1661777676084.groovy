@@ -31,5 +31,5 @@ WebUI.click(findTestObject('Object Repository/Page_OrangeHRM/button_Login'))
 
 WebUI.click(findTestObject('Page_OrangeHRM/select_Employee_status'))
 
-CustomKeywords.'keyword.dropdown.select_dropdown'(GlobalVariable.Employee_status)
+CustomKeywords.'keyword.custom.select_dropdown'(GlobalVariable.Employee_status)
 

@@ -19,15 +19,7 @@ import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser('')
 
-WebUI.maximizeWindow()
-
-WebUI.navigateToUrl(GlobalVariable.url)
-
-WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Username'), GlobalVariable.valid_usernme)
-
-WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Password'), GlobalVariable.valid_password)
-
-WebUI.click(findTestObject('Object Repository/Page_OrangeHRM/button_Login'))
+CustomKeywords.'keyword.custom.login'(GlobalVariable.valid_usernme, GlobalVariable.valid_password)
 
 WebUI.click(findTestObject('Object Repository/Page_OrangeHRM/button_Add'))
 
@@ -36,6 +28,8 @@ WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Employee Fu
 WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Employee Full Name_middleName'), GlobalVariable.employee_lname)
 
 WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Employee Full Name_lastName'), GlobalVariable.employee_mName)
+
+CustomKeywords.'keyword.custom.setText'('Employee Id', GlobalVariable.employee_id)
 
 WebUI.click(findTestObject('Object Repository/Page_OrangeHRM/button_Save'))
 

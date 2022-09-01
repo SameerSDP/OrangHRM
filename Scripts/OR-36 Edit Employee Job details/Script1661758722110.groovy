@@ -17,4 +17,23 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-CucumberKW.runFeatureFile('Include/features/OR-36 Edit Employee Job details.feature')
+WebUI.openBrowser('')
+
+WebUI.maximizeWindow()
+
+WebUI.navigateToUrl(GlobalVariable.url)
+
+WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Username'), GlobalVariable.valid_usernme)
+
+WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Password'), GlobalVariable.valid_password)
+
+WebUI.click(findTestObject('Object Repository/Page_OrangeHRM/button_Login'))
+
+CustomKeywords.'keyword.custom.selectEmployeeName'('Aaliyah ')
+
+WebUI.click(findTestObject('Page_OrangeHRM/pim_Job'))
+
+CustomKeywords.'keyword.custom.dropdown'('Job Title', 'IT Manager')
+
+WebUI.click(findTestObject('Page_OrangeHRM/button_Save'))
+

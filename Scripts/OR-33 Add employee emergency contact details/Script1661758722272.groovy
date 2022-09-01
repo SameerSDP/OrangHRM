@@ -17,4 +17,39 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-CucumberKW.runFeatureFile('Include/features/OR-33 Add employee emergency contact details.feature')
+WebUI.openBrowser('')
+
+WebUI.maximizeWindow()
+
+WebUI.navigateToUrl(GlobalVariable.url)
+
+WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Username'), GlobalVariable.valid_usernme)
+
+WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Password'), GlobalVariable.valid_password)
+
+WebUI.click(findTestObject('Object Repository/Page_OrangeHRM/button_Login'))
+
+WebUI.click(findTestObject('Object Repository/Page_OrangeHRM/button_Add'))
+
+WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Employee Full Name_firstName'), GlobalVariable.employee_fname)
+
+WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Employee Full Name_middleName'), GlobalVariable.employee_lname)
+
+WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Employee Full Name_lastName'), GlobalVariable.employee_mName)
+
+WebUI.click(findTestObject('Object Repository/Page_OrangeHRM/button_Save'))
+
+WebUI.waitForElementPresent(findTestObject('Page_OrangeHRM/pim_emergency_contact_details'), 0)
+
+WebUI.click(findTestObject('Page_OrangeHRM/pim_emergency_contact_details'))
+
+WebUI.click(findTestObject('Page_OrangeHRM/button_add_assigned_emergency_contact'))
+
+CustomKeywords.'keyword.custom.setText'('Name', GlobalVariable.emergency_contact_name)
+
+CustomKeywords.'keyword.custom.setText'('Relationship', GlobalVariable.emergency_contact_relation)
+
+CustomKeywords.'keyword.custom.setText'('Home Telephone', GlobalVariable.emergency_contact_phone)
+
+WebUI.click(findTestObject('Page_OrangeHRM/button_Save'))
+

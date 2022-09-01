@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>employee_checkbox_2</name>
+   <name>pim_contatct_details</name>
    <tag></tag>
-   <elementGuidId>469d6b5b-c860-48af-a3a2-6eb953541c4b</elementGuidId>
+   <elementGuidId>279452d9-b1a1-4377-a8ad-44873f40cb04</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>((//input[@type='checkbox'])[2]/following::span/i)[2]</value>
+         <value>//a[text()='Contact Details']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
