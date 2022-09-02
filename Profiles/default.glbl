@@ -154,4 +154,29 @@
       <initValue>'John John1'</initValue>
       <name>employee_fname_lname_check</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'College Undergraduate'</initValue>
+      <name>level</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'ABC technology'</initValue>
+      <name>institute</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'2015'</initValue>
+      <name>year</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'PQR corp'</initValue>
+      <name>company</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Associate'</initValue>
+      <name>job_title</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

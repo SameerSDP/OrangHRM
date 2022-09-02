@@ -47,3 +47,11 @@ WebUI.setText(findTestObject('Page_OrangeHRM/input_other_email'), GlobalVariable
 
 WebUI.click(findTestObject('Page_OrangeHRM/button_Save'))
 
+WebUI.waitForElementVisible(findTestObject('Page_OrangeHRM/p_Success'), GlobalVariable.setTimeout)
+
+WebUI.verifyElementVisible(findTestObject('Page_OrangeHRM/p_Success'))
+
+WebUI.closeBrowser()
+
+
+

@@ -17,3 +17,41 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+WebUI.openBrowser('')
+
+CustomKeywords.'keyword.custom.login'(GlobalVariable.valid_usernme, GlobalVariable.valid_password)
+
+WebUI.click(findTestObject('Page_OrangeHRM/employee_card_1'))
+
+WebUI.waitForElementPresent(findTestObject('Page_OrangeHRM/pim_qualification'), GlobalVariable.setTimeout)
+
+WebUI.click(findTestObject('Page_OrangeHRM/pim_qualification'))
+ 
+WebUI.click(findTestObject('Page_OrangeHRM/button_add_work_experience'))
+
+CustomKeywords.'keyword.custom.setText'('Company', GlobalVariable.company)
+
+CustomKeywords.'keyword.custom.setText'('Job Title', GlobalVariable.job_title)
+
+WebUI.click(findTestObject('Page_OrangeHRM/button_Save'))
+
+WebUI.waitForElementVisible(findTestObject('Page_OrangeHRM/p_Success'), GlobalVariable.setTimeout)
+
+WebUI.verifyElementVisible(findTestObject('Page_OrangeHRM/p_Success'))
+
+WebUI.click(findTestObject('Page_OrangeHRM/button_add_education'))
+
+CustomKeywords.'keyword.custom.dropdown'('Level', GlobalVariable.level)
+
+CustomKeywords.'keyword.custom.setText'('Institute', GlobalVariable.institute)
+
+CustomKeywords.'keyword.custom.setText'('Year', GlobalVariable.year)
+
+WebUI.click(findTestObject('Page_OrangeHRM/button_Save'))
+
+WebUI.waitForElementVisible(findTestObject('Page_OrangeHRM/p_Success'), GlobalVariable.setTimeout)
+
+WebUI.verifyElementVisible(findTestObject('Page_OrangeHRM/p_Success'))
+
+WebUI.closeBrowser()
+

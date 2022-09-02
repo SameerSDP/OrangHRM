@@ -35,3 +35,5 @@ WebUI.verifyElementText(findTestObject('Page_OrangeHRM/verify_dropdown_nationali
 
 WebUI.verifyElementText(findTestObject('Page_OrangeHRM/verify_dropdown_marital_status'), GlobalVariable.marital_status)
 
+WebUI.closeBrowser()
+

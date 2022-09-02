@@ -37,3 +37,5 @@ WebUI.waitForElementPresent(findTestObject('Page_OrangeHRM/Employee_Name'), Glob
 
 WebUI.verifyElementText(findTestObject('Page_OrangeHRM/Employee_Name'), GlobalVariable.employee_fname_lname)
 
+WebUI.closeBrowser()
+

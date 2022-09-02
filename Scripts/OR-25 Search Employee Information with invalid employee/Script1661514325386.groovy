@@ -35,3 +35,5 @@ WebUI.click(findTestObject('Page_OrangeHRM/button_Search'))
 
 WebUI.verifyElementPresent(findTestObject('Page_OrangeHRM/text_No Records Found'), GlobalVariable.setTimeout)
 
+WebUI.closeBrowser()
+

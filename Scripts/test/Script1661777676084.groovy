@@ -19,17 +19,15 @@ import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser('')
 
-WebUI.maximizeWindow()
+CustomKeywords.'keyword.custom.login'(GlobalVariable.valid_usernme, GlobalVariable.valid_password)
 
-WebUI.navigateToUrl(GlobalVariable.url)
+WebUI.check(findTestObject('Page_OrangeHRM/checkbox_1'))
 
-WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Username'), GlobalVariable.valid_usernme)
+WebUI.click(findTestObject('Page_OrangeHRM/button_delete_selected'))
 
-WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Password'), GlobalVariable.valid_password)
+WebUI.click(findTestObject('Page_OrangeHRM/button_Yes_delete'))
 
-WebUI.click(findTestObject('Object Repository/Page_OrangeHRM/button_Login'))
+WebUI.waitForElementVisible(findTestObject('Page_OrangeHRM/p_Success'), GlobalVariable.setTimeout)
 
-WebUI.click(findTestObject('Page_OrangeHRM/select_Employee_status'))
-
-CustomKeywords.'keyword.custom.select_dropdown'(GlobalVariable.Employee_status)
+WebUI.verifyElementVisible(findTestObject('Page_OrangeHRM/p_Success'))
 

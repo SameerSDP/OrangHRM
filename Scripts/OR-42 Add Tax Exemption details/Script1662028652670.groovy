@@ -17,3 +17,23 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+WebUI.openBrowser('')
+
+CustomKeywords.'keyword.custom.login'(GlobalVariable.valid_usernme, GlobalVariable.valid_password)
+
+WebUI.click(findTestObject('Page_OrangeHRM/employee_card_1'))
+
+WebUI.click(findTestObject('Page_OrangeHRM/pim_tax_exemption'))
+
+CustomKeywords.'keyword.custom.dropdown'('Status', GlobalVariable.marital_status)
+
+CustomKeywords.'keyword.custom.setText'('Exemptions', '50')
+
+WebUI.click(findTestObject('Page_OrangeHRM/button_Save'))
+
+WebUI.waitForElementVisible(findTestObject('Page_OrangeHRM/p_Success'), GlobalVariable.setTimeout)
+
+WebUI.verifyElementVisible(findTestObject('Page_OrangeHRM/p_Success'))
+
+WebUI.closeBrowser()
+

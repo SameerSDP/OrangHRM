@@ -19,15 +19,7 @@ import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser('')
 
-WebUI.maximizeWindow()
-
-WebUI.navigateToUrl(GlobalVariable.url)
-
-WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Username'), GlobalVariable.valid_usernme)
-
-WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Password'), GlobalVariable.valid_password)
-
-WebUI.click(findTestObject('Object Repository/Page_OrangeHRM/button_Login'))
+CustomKeywords.'keyword.custom.login'(GlobalVariable.valid_usernme, GlobalVariable.valid_password)
 
 WebUI.click(findTestObject('Object Repository/Page_OrangeHRM/button_Add'))
 
@@ -49,13 +41,17 @@ CustomKeywords.'keyword.custom.setText'('Name', GlobalVariable.dependent_name)
 
 CustomKeywords.'keyword.custom.dropdown'('Relationship', 'Child')
 
-CustomKeywords.'keyword.custom.verifyTablebodyName'(GlobalVariable.dependent_name)
-
 WebUI.click(findTestObject('Page_OrangeHRM/button_Save'))
 
-WebUI.check(findTestObject('Page_OrangeHRM/checkbox_1'))
+WebUI.waitForElementPresent(findTestObject('Page_OrangeHRM/icon_delete'), GlobalVariable.setTimeout)
 
-WebUI.click(findTestObject('Page_OrangeHRM/button_delete_selected'))
+WebUI.click(findTestObject('Page_OrangeHRM/icon_delete'))
 
 WebUI.click(findTestObject('Page_OrangeHRM/button_Yes_delete'))
+
+WebUI.waitForElementVisible(findTestObject('Page_OrangeHRM/p_Success'), GlobalVariable.setTimeout)
+
+WebUI.verifyElementVisible(findTestObject('Page_OrangeHRM/p_Success'))
+
+WebUI.closeBrowser()
 

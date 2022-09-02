@@ -39,3 +39,5 @@ WebUI.waitForElementPresent(findTestObject('Page_OrangeHRM/text_past_employee'),
 
 WebUI.verifyElementPresent(findTestObject('Page_OrangeHRM/text_past_employee'), GlobalVariable.setTimeout)
 
+WebUI.closeBrowser()
+

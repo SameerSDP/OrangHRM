@@ -29,3 +29,5 @@ WebUI.click(findTestObject('Page_OrangeHRM/button_Yes_delete'))
 
 WebUI.verifyElementNotPresent(findTestObject('Page_OrangeHRM/verify_employee_present'), GlobalVariable.setTimeout)
 
+WebUI.closeBrowser()
+
